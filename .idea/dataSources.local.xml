@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - blog@phppgadmin" uuid="803f97a4-22ed-4d5d-82a0-35d6f4ea9078">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+    </data-source>
+  </component>
+</project>
