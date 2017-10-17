@@ -7,8 +7,16 @@ body {
     font-family: 'Comic Sans MS';
     padding: 50px;
     background: #edf1f2;
-    color: #000;
+    color: #333;
 
+
+}
+
+header{
+    background: #fff;
+    padding: 0 30px;
+    line-height: 40px;
+    box-shadow: 0 1px 3px 0 rgba(#000, .3);
 }
 
 .avtor{
