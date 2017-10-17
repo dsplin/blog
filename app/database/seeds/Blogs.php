@@ -4,7 +4,7 @@ class Blogs extends Seeder {
 
     public function run()
     {
-        DB::table('blogs')->delete();
+        /*DB::table('blogs')->delete();
 
         $faker = Faker\Factory::create();
         $create=function() use ($faker)
@@ -19,7 +19,7 @@ class Blogs extends Seeder {
 
         for ($i=0; $i<10; $i++) {
             $create();
-        }
+        }*/
     }
 
 }

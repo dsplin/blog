@@ -13,8 +13,8 @@ class CreateBlogsTable extends Migration {
 			$table->increments('id');
 			$table->string('title', 255);
 			$table->text('content');
-			$table->integer('user_id');
-			$table->string('login', 255);
+			$table->integer('user_id')->nullable();
+			$table->string('login', 255)->nullable();
 			$table->rememberToken();
 			$table->timestamps();
 		});
