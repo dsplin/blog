@@ -18,7 +18,7 @@ class User extends Eloquent
 		$this->attributes['password'] = Hash::make($pass);
 	}
 
-	public function comentsuser()
+	public function comentsUser()
 	{
 		return $this->hasMany('Coment', 'user_id', 'id');
 	}

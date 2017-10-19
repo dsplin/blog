@@ -19,9 +19,9 @@ class HomeController extends BaseController {
 		$id_coment=$id_id;		
 		$count_coments=$i;
 
-		$ccc=User::find(2)->comentsuser;
+		$comentsUser=User::find(2)->comentsUser;
 		$j=0;
-		foreach ($ccc as $coment)
+		foreach ($comentsUser as $coment)
 		{
 			$coment->user_id;
 			$j++;
