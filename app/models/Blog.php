@@ -13,4 +13,9 @@ class Blog extends Eloquent
         'title',
         'content',     
     );
+    public function coments()
+    {
+        return $this->hasMany('Coment', 'post_id', 'id');
+    }
+
 }

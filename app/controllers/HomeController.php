@@ -7,8 +7,31 @@ class HomeController extends BaseController {
 	// Головна сторінка
 	public function index()
 	{
-		$this->layout->content = View::make('blog.index');
-		//return View::make('helloworld');
+		$id_id=Blog::first()->id;
+
+		$coments=Blog::find($id_id)->coments;
+		$i=0;
+		foreach ($coments as $coment)
+		{
+			$coment->post_id;
+			$i++;
+		}
+		$id_coment=$id_id;		
+		$count_coments=$i;
+
+		$ccc=User::find(2)->comentsuser;
+		$j=0;
+		foreach ($ccc as $coment)
+		{
+			$coment->user_id;
+			$j++;
+		}
+		
+		$count_coments_user=$j;
+		
+		
+		$this->layout->content = View::make('blog.index', compact('count_coments','id_coment','count_coments_user'));
+
 	}
 
 	// Авторизація
@@ -66,9 +89,16 @@ class HomeController extends BaseController {
 
 	public function add_coments_2()
 	{
-		
-
-		return 'home';
+		Session::put('key2', Input::get('route'));
+		$value = Session::get('key2');
+		$c = new Coment;
+		$c-> coment=Input::get('coment');
+		$c-> user_id=User::first()->id;
+		$c-> post_id=$value;
+		$c-> save();
+		return Redirect::route('home');
 	}
+
+	
 	
 }

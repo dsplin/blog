@@ -38,3 +38,4 @@ Route::post('add_post',['as'=>'add_post','uses'=>'HomeController@add_post_db']);
 Route::post('add_coments_2',['as'=>'add_coments_2','uses'=>'HomeController@add_coments_2']);
 
 Route::post('add_coments',['as'=>'add_coments','uses'=>'HomeController@add_coments_db']);
+
