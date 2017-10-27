@@ -2,14 +2,13 @@
 @include('partial.header')
 <div class="welcome">
 	<h1><center>Мій блог. </center></h1>
-	<hr><br>
+	<hr>
+	<br>
 	@foreach (Blog::latest()->get() as $blog)
-		<h3>{{$blog->title}}</h3>
-		<p>{{$blog->content}}</p>
+			<h2>
+				<a href="testindex/{{$blog->id}}">{{$blog->title}}</a>
+			</h2>
 		<br>
-		@include('partial.coment')
-		<br>
-		@include('partial.add_coment')
 	@endforeach
 </div>
 @stop

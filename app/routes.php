@@ -17,7 +17,15 @@
 });*/
 
 // Головна сторінка
-Route::get('/', ['as'=>'home','uses'=>'HomeController@index']);
+Route::get('testindex', ['as'=>'home','uses'=>'HomeController@index']);
+
+// Головна сторінка тестова
+Route::get('/', ['as'=>'testindex','uses'=>'HomeController@testindex']);
+
+Route::get('testindex/{id}', ['as'=>'show','uses'=>'HomeController@show']);
+
+Route::post('testform', ['as'=>'testform','uses'=>'HomeController@testform']);
+Route::post('testadd', ['as'=>'testadd','uses'=>'HomeController@testadd']);
 
 // Авторизація
 
@@ -38,4 +46,6 @@ Route::post('add_post',['as'=>'add_post','uses'=>'HomeController@add_post_db']);
 Route::post('add_coments_2',['as'=>'add_coments_2','uses'=>'HomeController@add_coments_2']);
 
 Route::post('add_coments',['as'=>'add_coments','uses'=>'HomeController@add_coments_db']);
+
+Route::get('php', ['as'=>'php','uses'=>'HomeController@php']);
 

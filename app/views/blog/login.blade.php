@@ -12,3 +12,4 @@
         {{Session::get('error')}}
     @endif
 @stop
+

@@ -29,3 +29,15 @@ header, .coment{
     margin-bottom: 30px;
 }
 
+.user{
+   float: left;
+}
+
+.menu-gol{
+    float: right;
+}
+
+.menu{
+    margin: 30px;
+}
+

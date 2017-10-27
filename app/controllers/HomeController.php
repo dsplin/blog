@@ -17,6 +17,7 @@ class HomeController extends BaseController {
 			$i++;
 		}
 		$id_coment=$id_id;		
+
 		$count_coments=$i;
 
 		$comentsUser=User::find(2)->comentsUser;
@@ -33,6 +34,36 @@ class HomeController extends BaseController {
 		$this->layout->content = View::make('blog.index', compact('count_coments','id_coment','count_coments_user'));
 
 	}
+	
+	////////////////////////////
+	public function testindex()
+	{
+		$count_coments_user=-1;
+		$this->layout->content = View::make('blog.testindex', compact('count_coments_user'));
+
+	}
+	public function show($id)
+	{
+
+		$artical=Blog::find($id);
+		$avtor=$artical->login;
+		$coments=Blog::find($id)->coments;
+		$i=0;
+		foreach ($coments as $coment)
+		{
+			$coment->post_id;
+			$i++;
+		}
+
+		$count_coments=$i;
+
+
+		$id_coment=$id;
+		$count_coments_user=-1;
+		$this->layout->content = View::make('blog.testshow', compact('id','count_coments_user','id_coment','count_coments','artical','avtor'));
+
+	}
+	////////////////////////////
 
 	// Авторизація
 	public function login()
@@ -76,7 +107,7 @@ class HomeController extends BaseController {
 		$b-> user_id=User::first()->id;
 		$b->login=User::first()->login;
 		$b-> save();
-		return Redirect::route('home');
+		return Redirect::route('testindex');
 	}
 
 	// Добавлення коментів
@@ -98,7 +129,28 @@ class HomeController extends BaseController {
 		$c-> save();
 		return Redirect::route('home');
 	}
+////////////////////////тестові розробк////////////////////////////
+	public function php()
+	{		
+		return View::make('blog.php');
+	}
+	public function testform()
+	{
+		Session::put('key', Input::get('route'));
+		$id = Session::get('key');
+		$this->layout->content = View::make('blog.testform', compact('id'));
+	}
 
-	
+	public function testadd()
+	{
+		Session::put('key2', Input::get('route'));
+		$value = Session::get('key2');
+		$c = new Coment;
+		$c-> coment=Input::get('coment');
+		$c-> user_id=User::first()->id;
+		$c-> post_id=$value;
+		$c-> save();
+		return Redirect::route('testindex');
+	}
 	
 }
